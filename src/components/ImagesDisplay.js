@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import ThumbnailsCont from "./ThumbnailsCont"
-const ImagesDisplay = () => {
-    const [focusedThumbnail, setFocusedThumbnail] = useState(1);
+const ImagesDisplay = (props) => {
+    const { isCloaked, setIsCloaked } = props;
+    const { focusedThumbnail, setFocusedThumbnail } = props;
     const [currentImg, setCurrentImg] = useState(`/images/image-product-${focusedThumbnail}.jpg`);
     useEffect(() => {
         setCurrentImg(`/images/image-product-${focusedThumbnail}.jpg`)
     }, [focusedThumbnail]);
     return (
         <div className="ImagesDisplay">
-            <img src={currentImg} alt="" className="currentImageDisplayed" />
+            <img src={currentImg} alt="" className="currentImageDisplayed clickableMainImage" onClick={() => {
+                setIsCloaked(false);
+            }} />
             <ThumbnailsCont focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} />
         </div>
     );

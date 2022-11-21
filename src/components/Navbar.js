@@ -11,9 +11,9 @@ const Navbar = () => {
                     <a href="">Contact</a>
                 </div>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
                 <img src="/images/icon-cart.svg" alt="" className="cartLogo" />
-                <img src="/images/image-avatar.png" alt="" className="avatar" />
+                <img src="/images/based.jpg" alt="" className="avatar" />
             </div>
         </header>
     );

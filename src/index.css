@@ -12,6 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: 50px;
+  overflow-y: hidden;
 }
 
 code {
@@ -24,6 +25,11 @@ code {
   font-family: 'Kumbh Sans';
   padding: 0;
   margin: 0;
+}
+
+.App {
+  position: relative;
+  z-index: 0;
 }
 
 header {
@@ -54,7 +60,7 @@ header {
 
 .Main {
   margin: 50px auto 0 auto;
-  width: 1050px;
+  width: 1000px;
   display: flex;
   justify-content: space-between;
 }
@@ -131,7 +137,7 @@ header {
 }
 
 .ThumbnailsCont img:not(.ThumbIsClicked) {
-  border: 1px solid hsl(26, 100%, 100%);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .ThumbnailsCont img:hover:not(.ThumbIsClicked) {
@@ -162,9 +168,21 @@ header {
   display: flex;
 }
 
-.newPriceInfo h1 {}
+.newPriceInfo h1 {
+  margin-right: 20px;
+  font-size: 2.25rem;
+  font-weight: bold;
+}
 
-.newPriceInfo h2 {}
+.newPriceInfo h2 {
+  color: hsl(43, 86%, 48%);
+  background-color: rgba(255, 184, 41, 0.25);
+  height: fit-content;
+  padding: 2px 5px 2px 5px;
+  border-radius: 6px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 .cartFunctionality {
   display: flex;
@@ -239,4 +257,37 @@ header {
   margin: auto 0;
   height: 50%;
   width: auto;
+}
+
+.oldprice {
+  color: rgb(183, 183, 183);
+  text-decoration: line-through;
+}
+
+/* Cloaked image display */
+.CloakedImageDisplay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 100;
+  transition: all 0.5s;
+}
+
+.Cloaked {
+  display: none;
+}
+
+.ImagesDisplayCloaked {
+  width: 45%;
+  margin: auto;
+}
+
+.clickableMainImage:hover {
+  cursor: pointer;
 }

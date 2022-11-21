@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 
-const ThumbnailsCont = (props) => {
-    const focusedThumbnail = props.focusedThumbnail;
-    const setFocusedThumbnail = props.setFocusedThumbnail;
+const ThumbnailsContCloak = (props) => {
+    const focusedThumbnailCloak = props.focusedThumbnailCloak;
+    const setFocusedThumbnailCloak = props.setFocusedThumbnailCloak;
     useEffect(() => {
-        const buttons = document.querySelectorAll(".ThumbnailsCont")[0].childNodes;
+        const buttons = document.querySelectorAll(".ThumbnailsCont")[1].childNodes;
         buttons.forEach((but) => {
             but.classList.remove("ThumbIsClicked");
         })
         buttons.forEach((but) => {
-            if (Number(but.id[3]) === focusedThumbnail) {
+            if (Number(but.id[3]) === focusedThumbnailCloak) {
                 but.classList.add('ThumbIsClicked');
             }
         });
-    }, [focusedThumbnail]);
+    }, [focusedThumbnailCloak]);
 
     const handleClick = (e) => {
         const eTarget = e.target;
-        setFocusedThumbnail(Number(eTarget.id[3]));
+        setFocusedThumbnailCloak(Number(eTarget.id[3]));
     }
 
     return (
@@ -30,4 +30,4 @@ const ThumbnailsCont = (props) => {
     );
 }
 
-export default ThumbnailsCont;
+export default ThumbnailsContCloak;
