@@ -5,6 +5,7 @@ const ImagesDisplayForCloak = (props) => {
     const [focusedThumbnailCloak, setFocusedThumbnailCloak] = useState(1);
     useEffect(() => {
         setFocusedThumbnailCloak(focusedThumbnail);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isCloaked]);
     const [currentImg, setCurrentImg] = useState(`/images/image-product-${focusedThumbnailCloak}.jpg`);
     useEffect(() => {
