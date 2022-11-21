@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import ThumbnailsContCloak from "./ThumbnailsContCloak";
 const ImagesDisplayForCloak = (props) => {
-    const { isCloaked, focusedThumbnail, setFocusedThumbnail } = props;
+    const { isCloaked, focusedThumbnail } = props;
     const [focusedThumbnailCloak, setFocusedThumbnailCloak] = useState(1);
     useEffect(() => {
-        setFocusedThumbnailCloak(focusedThumbnail)
+        setFocusedThumbnailCloak(focusedThumbnail);
     }, [isCloaked]);
     const [currentImg, setCurrentImg] = useState(`/images/image-product-${focusedThumbnailCloak}.jpg`);
     useEffect(() => {

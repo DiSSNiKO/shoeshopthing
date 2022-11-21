@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ImagesDisplay from "./ImagesDisplay"
 import InfoNDAddToCart from "./InfoNDAddToCart";
 

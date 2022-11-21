@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Main from "./components/Main"
 import CloakedImagesDisplay from "./components/CloakedImagesDisplay";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // 1120px pirveli media tagistvis
 
