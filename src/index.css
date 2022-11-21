@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Kumbh+Sans);
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,223 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 50px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans';
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  height: 90px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.logosvg {
+  height: 40%;
+  width: auto;
+  margin: auto;
+}
+
+.navButtons a {
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+  font-size: 1.4rem;
+  font-weight: 400;
+  transition: all 0.25s;
+  height: fit-content;
+  margin: auto;
+}
+
+.Main {
+  margin: 50px auto 0 auto;
+  width: 1050px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navButtons a:hover {
+  color: aqua;
+}
+
+.navButtons a:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.navButtons {
+  margin-left: 5rem;
+  display: flex;
+}
+
+.cartLogo {
+  height: 40%;
+  width: auto;
+  margin: auto 30px auto 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 90%;
+  width: auto;
+}
+
+.ThumbnailsCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.InfoAndCart {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.InfoAndCart p {
+  font-size: 1.3rem;
+  color: hsl(219, 9%, 45%);
+}
+
+.marginable {
+  margin-bottom: 20px;
+}
+
+.ImagesDisplay {
+  width: 50%;
+}
+
+.currentImageDisplayed {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.ThumbnailsCont {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ThumbnailsCont img {
+  width: 20%;
+  border-radius: 12px;
+  transition: all 0.1s;
+}
+
+.ThumbnailsCont img:not(.ThumbIsClicked) {
+  border: 1px solid hsl(26, 100%, 100%);
+}
+
+.ThumbnailsCont img:hover:not(.ThumbIsClicked) {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.ThumbIsClicked {
+  opacity: 0.5;
+  border: 1px solid hsl(26, 100%, 55%);
+  cursor: default;
+}
+
+.ThumbIsClicked:hover {
+  cursor: default;
+}
+
+.ThumbnailsCont img:hover {
+  opacity: 0.5;
+}
+
+.sneakerName {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.newPriceInfo {
+  display: flex;
+}
+
+.newPriceInfo h1 {}
+
+.newPriceInfo h2 {}
+
+.cartFunctionality {
+  display: flex;
+}
+
+.amountCont {
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(223, 64%, 98%);
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.amount {
+  font-size: 2rem;
+  display: block;
+  height: 25px;
+  margin: auto 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+#plus {
+  height: 12px;
+  width: 12px;
+  color: hsl(26, 100%, 55%);
+  margin: auto 10px auto 0;
+}
+
+#minus {
+  height: 4px;
+  width: 12px;
+  color: hsl(26, 100%, 55%);
+  margin: auto 0 auto 10px;
+}
+
+
+.amountCont img:hover {
+  cursor: pointer;
+}
+
+.buyButton {
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 10px;
+  width: 280px;
+  height: 40px;
+}
+
+.buyButton span {
+  display: block;
+  margin: auto 0;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.buyButton img {
+  margin: auto 0;
+  height: 50%;
+  width: auto;
 }
