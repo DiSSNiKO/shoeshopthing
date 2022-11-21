@@ -194,6 +194,7 @@ header {
   width: 12px;
   color: hsl(26, 100%, 55%);
   margin: auto 10px auto 0;
+  transition: all 0.25s;
 }
 
 #minus {
@@ -201,11 +202,13 @@ header {
   width: 12px;
   color: hsl(26, 100%, 55%);
   margin: auto 0 auto 10px;
+  transition: all 0.25s;
 }
 
 
 .amountCont img:hover {
   cursor: pointer;
+  transform: scale(1.15);
 }
 
 .buyButton {
@@ -216,6 +219,12 @@ header {
   border-radius: 10px;
   width: 280px;
   height: 40px;
+  transition: 0.25s;
+}
+
+.buyButton:hover {
+  background-color: hsl(40, 100%, 58%);
+  cursor: pointer;
 }
 
 .buyButton span {
