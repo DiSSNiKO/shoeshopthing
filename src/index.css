@@ -317,10 +317,21 @@ header {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  :root {
+    --navbarWidth: 95%;
+    --mainWidth: 80%;
+  }
+}
+
 @media only screen and (max-width: 1020px) {
   :root {
     --navbarWidth: 900px;
     --mainWidth: 800px;
+  }
+
+  .ImagesDisplayCloaked {
+    width: 60%;
   }
 
   .InfoAndCart {
@@ -332,10 +343,41 @@ header {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  :root {
+    --navbarWidth: 95%;
+    --mainWidth: 80%;
+  }
+
+  .sneakerName {
+    font-size: 2.5rem;
+  }
+
+  .InfoAndCart {
+    justify-content: space-between;
+  }
+
+  .InfoAndCart p {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   :root {
     --navbarWidth: 600px;
     --mainWidth: 500px;
+  }
+
+  .InfoAndCart {
+    justify-content: center;
+  }
+
+  .ImagesDisplayCloaked {
+    width: 100%;
+  }
+
+  .InfoAndCart p {
+    display: block;
   }
 
   .Main {
@@ -357,11 +399,6 @@ header {
     margin-bottom: 75px;
   }
 
-  .sneakerName {
-    font-size: 3rem;
-    text-align: center;
-  }
-
   .sneakerComp {
     text-align: center;
   }
@@ -372,6 +409,13 @@ header {
 
   .InfoAndCart p {
     width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --navbarWidth: 95%;
+    --mainWidth: 80%;
   }
 }
 
