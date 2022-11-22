@@ -16,7 +16,7 @@ const InfoNDAddToCart = () => {
     }
     return (
         <div className="InfoAndCart">
-            <h2 style={{ color: "hsl(26, 100%, 55%)" }} className="marginable">SNEAKER COMPANY</h2>
+            <h2 className="marginable sneakerComp">SNEAKER COMPANY</h2>
             <h1 className="sneakerName marginable">Fall Limited Edition Sneakers</h1>
             <p className="marginable">
                 i sat here
