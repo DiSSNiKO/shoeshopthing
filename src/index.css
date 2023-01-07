@@ -5,6 +5,8 @@
   --mainWidth: 1000px;
   --amountContWidth: 140px;
   --buyButtonWidth: 280px;
+  --imagesWidth: 450px;
+  --cloakedImagesWidth: 500px;
 }
 
 html {
@@ -70,6 +72,7 @@ header {
   margin: 100px auto 0 auto;
   width: var(--mainWidth);
   display: flex;
+  padding-bottom: 25px;
   justify-content: space-between;
 }
 
@@ -107,7 +110,7 @@ header {
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .InfoAndCart p {
@@ -117,6 +120,7 @@ header {
 
 .sneakerComp {
   color: rgb(255, 125, 26);
+  font-size: 2rem;
 }
 
 .marginable {
@@ -128,7 +132,7 @@ header {
 }
 
 .currentImageDisplayed {
-  width: 80%;
+  width: var(--imagesWidth);
   height: auto;
   display: block;
   margin: 0 auto;
@@ -136,7 +140,7 @@ header {
 }
 
 .ThumbnailsCont {
-  width: 80%;
+  width: var(--imagesWidth);
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -149,7 +153,7 @@ header {
 }
 
 .ThumbnailsCont img:not(.ThumbIsClicked) {
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 3px solid rgba(255, 255, 255, 0);
 }
 
 .ThumbnailsCont img:hover:not(.ThumbIsClicked) {
@@ -158,8 +162,8 @@ header {
 }
 
 .ThumbIsClicked {
-  opacity: 0.5;
-  border: 1px solid hsl(26, 100%, 55%);
+  opacity: 0.75;
+  border: 3px solid hsl(26, 100%, 55%);
   cursor: default;
 }
 
@@ -278,7 +282,7 @@ header {
 
 /* Cloaked image display */
 .CloakedImageDisplay {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   top: 0;
@@ -286,9 +290,9 @@ header {
   width: 100vw;
   height: 100vh;
   z-index: 1;
+  transition: all 0s !important;
   background-color: rgba(0, 0, 0, 0.75);
-  opacity: 100;
-  transition: all 0.5s;
+  align-items: center;
 }
 
 .Cloaked {
@@ -296,8 +300,14 @@ header {
 }
 
 .ImagesDisplayCloaked {
-  width: 45%;
-  margin: auto;
+  position: absolute;
+  width: fit-content;
+}
+.ImagesDisplayCloaked > img {
+  width: var(--cloakedImagesWidth) !important;
+}
+.ImagesDisplayCloaked > .ThumbnailsCont {
+  width: var(--cloakedImagesWidth) !important;
 }
 
 .clickableMainImage:hover {
@@ -332,16 +342,8 @@ header {
     --mainWidth: 800px;
   }
 
-  .ImagesDisplayCloaked {
-    width: 60%;
-  }
-
   .InfoAndCart {
     width: 40%;
-  }
-
-  .ImagesDisplay {
-    width: 60%;
   }
 }
 
@@ -349,37 +351,41 @@ header {
   :root {
     --navbarWidth: 95%;
     --mainWidth: 80%;
+    --imagesWidth: 350px;
   }
-
+  .sneakerComp {
+    font-size: 1.5rem;
+  }
   .sneakerName {
     font-size: 2.5rem;
   }
-
-  .InfoAndCart {
-    justify-content: space-between;
-  }
-
   .InfoAndCart p {
-    display: none;
+    font-size: 1.2rem;
   }
+  
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   :root {
     --navbarWidth: 600px;
     --mainWidth: 500px;
+    --imagesWidth: 500px;
+  }
+  .InfoAndCart {
+    height: 400px;
+  }
+  .sneakerComp {
+    font-size: 2rem;
+  }
+  .sneakerName {
+    font-size: 3.5rem;
   }
 
   .InfoAndCart {
-    justify-content: center;
+    justify-content: space-around;
   }
-
-  .ImagesDisplayCloaked {
-    width: 100%;
-  }
-
   .InfoAndCart p {
-    display: block;
+    font-size: 1.5rem;
   }
 
   .Main {
@@ -418,6 +424,19 @@ header {
   :root {
     --navbarWidth: 95%;
     --mainWidth: 80%;
+    --imagesWidth: 350px;
+  }
+  .sneakerComp {
+    font-size: 2.25rem;
+  }
+  .sneakerName {
+    font-size: 2.75rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  :root {
+    --cloakedImagesWidth: 450px;
   }
 }
 
@@ -427,6 +446,7 @@ header {
     --mainWidth: 340px;
     --buyButtonWidth: 160px;
     --amountContWidth: 80px;
+    --cloakedImagesWidth: 400px;
   }
 
   .Main {
@@ -464,5 +484,15 @@ header {
   .InfoAndCart p {
     width: 90%;
   }
-
+}
+@media only screen and (max-width: 450px){
+  :root {
+    --cloakedImagesWidth: 360px;
+  }
+}
+@media only screen and (max-width: 400px){
+  :root {
+    --imagesWidth: 300px;
+    --cloakedImagesWidth: 340px;
+  }
 }

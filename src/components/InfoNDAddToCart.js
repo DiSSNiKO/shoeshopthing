@@ -16,9 +16,9 @@ const InfoNDAddToCart = () => {
     }
     return (
         <div className="InfoAndCart">
-            <h2 className="marginable sneakerComp">SNEAKER COMPANY</h2>
-            <h1 className="sneakerName marginable">Fall Limited Edition Sneakers</h1>
-            <p className="marginable">
+            <h2 className="sneakerComp">SNEAKER COMPANY</h2>
+            <h1 className="sneakerName">Fall Limited Edition Sneakers</h1>
+            <p>
                 i sat here
                 listening to the sound of rain
                 thinking what had happened
@@ -39,12 +39,12 @@ const InfoNDAddToCart = () => {
                 let's forget what had passed
                 and build a better future
             </p>
-            <div className="newPriceInfo marginable">
+            <div className="newPriceInfo">
                 <h1>$125.00</h1>
                 <h2>50%</h2>
             </div>
-            <h2 className="marginable oldprice">$250.00</h2>
-            <div className="cartFunctionality marginable">
+            <h2 className="oldprice">$250.00</h2>
+            <div className="cartFunctionality">
                 <div className="amountCont">
                     <img src="/images/icon-minus.svg" id="minus" alt="" onClick={lowerAmount} />
                     <span className="amount">{amount}</span>
