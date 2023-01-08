@@ -3,6 +3,7 @@ import ImagesDisplayForCloak from "./ImagesDisplayForCloak";
 const CloakedImagesDisplay = (props) => {
     const isCloaked = props.isCloaked;
     const setIsCloaked = props.setIsCloaked;
+    const {focusedThumbnailCloak, setFocusedThumbnailCloak} = props;
     let classname = `CloakedImageDisplay `;
     if (isCloaked) {
         classname += 'Cloaked';
@@ -13,7 +14,7 @@ const CloakedImagesDisplay = (props) => {
                 setIsCloaked(true);
             }
         }}>
-            <ImagesDisplayForCloak isCloaked={isCloaked} setIsCloaked={setIsCloaked} focusedThumbnail={props.focusedThumbnail} setFocusedThumbnail={props.setFocusedThumbnail} />
+            <ImagesDisplayForCloak focusedThumbnailCloak={focusedThumbnailCloak} setFocusedThumbnailCloak={setFocusedThumbnailCloak} isCloaked={isCloaked} setIsCloaked={setIsCloaked} focusedThumbnail={props.focusedThumbnail} setFocusedThumbnail={props.setFocusedThumbnail} />
         </div>
 
     );

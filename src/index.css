@@ -7,6 +7,7 @@
   --buyButtonWidth: 280px;
   --imagesWidth: 450px;
   --cloakedImagesWidth: 500px;
+  --changeImageWH: 50px;
 }
 
 html {
@@ -138,7 +139,9 @@ header {
   margin: 0 auto;
   border-radius: 12px;
 }
-
+.currentImageDisplayed:hover ~ .closeCloakDisplay {
+  opacity: 1;
+}
 .ThumbnailsCont {
   width: var(--imagesWidth);
   margin-top: 20px;
@@ -298,7 +301,51 @@ header {
 .Cloaked {
   display: none;
 }
-
+.closeCloakDisplay {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 3.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  line-height: 0.8;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgb(40, 40, 40);
+  opacity: 0;
+}
+.closeCloakDisplay:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  color: darkred;
+}
+.ImagesDisplayCloaked > .toLeft, .toRight {
+  height: var(--changeImageWH);
+  width: var(--changeImageWH);
+  position: absolute;
+  font-size: 2.5rem;
+  top: 50%;
+  font-weight: bold;
+  transform: translateY(-100%);
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.toLeft {
+  left: calc(0px - var(--changeImageWH)/2);
+}
+.toRight {
+  right: calc(0px - var(--changeImageWH)/2);
+}
+.toLeft:hover {
+  background-color: lightgray;
+}
+.toRight:hover {
+  background-color: lightgray;
+}
 .ImagesDisplayCloaked {
   position: absolute;
   width: fit-content;

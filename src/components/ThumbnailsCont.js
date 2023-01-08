@@ -3,6 +3,7 @@ import { useEffect } from "react";
 const ThumbnailsCont = (props) => {
     const focusedThumbnail = props.focusedThumbnail;
     const setFocusedThumbnail = props.setFocusedThumbnail;
+    const setFocusedThumbnailCloak = props.setFocusedThumbnailCloak;
     useEffect(() => {
         const buttons = document.querySelectorAll(".ThumbnailsCont")[0].childNodes;
         buttons.forEach((but) => {

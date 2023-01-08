@@ -3,10 +3,11 @@ import InfoNDAddToCart from "./InfoNDAddToCart";
 
 const Main = (props) => {
     const { isCloaked, setIsCloaked } = props;
-    const { focusedThumbnail, setFocusedThumbnail } = props;
+    const { focusedThumbnail, setFocusedThumbnail, setFocusedThumbnailCloak } = props;
+    
     return (
         <div className="Main">
-            <ImagesDisplay isCloaked={isCloaked} setIsCloaked={setIsCloaked} focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} />
+            <ImagesDisplay setFocusedThumbnailCloak={setFocusedThumbnailCloak} isCloaked={isCloaked} setIsCloaked={setIsCloaked} focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} />
             <InfoNDAddToCart />
         </div>
     );
