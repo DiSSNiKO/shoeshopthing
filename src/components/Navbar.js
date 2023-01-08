@@ -19,7 +19,7 @@ const Navbar = (props) => {
                                         let newArray = [];
                                         let itemsRemoved = 0;
                                         cartItemObjects.forEach((elem, i)=>{
-                                            if(i!=e.target.dataset.delIndex){
+                                            if(i!==e.target.dataset.delIndex){
                                                 newArray.push(elem);
                                             } else {
                                                 itemsRemoved = elem.amount;
