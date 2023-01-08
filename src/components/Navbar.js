@@ -1,5 +1,18 @@
 const Navbar = (props) => {
     const {cartItemObjects, setCartItemObjects, setNumOfItems, numOfItems} = props;
+    function handleTheHell(e) {
+        let newArray = [];
+        let itemsRemoved = 0;
+        cartItemObjects.forEach((elem, i)=>{
+            if(i!==Number(e.target.dataset.delIndex)){
+                newArray.push(elem);
+            } else {
+                itemsRemoved = elem.amount;
+            }
+            setCartItemObjects(newArray);
+            itemsRemoved>0 && setNumOfItems(numOfItems - itemsRemoved);
+        });
+    }
     return (
         <header className="navbar">
             <div className={`cart ${props.cartOpen ? "":"hideCart"}`}>
@@ -15,20 +28,7 @@ const Navbar = (props) => {
                                         <div>Fall Limited Edition Sneakers</div>
                                         <div>$125.00 x {objekt.amount} <strong>{objekt.totalPrice}</strong></div>
                                     </div>
-                                    <img className="deleteCartItem" data-del-index={indx} src="/images/icon-delete.svg" alt="" onClick={(e)=>{
-                                        let newArray = [];
-                                        let itemsRemoved = 0;
-                                        cartItemObjects.forEach((elem, i)=>{
-                                            //the hel?
-                                            if(i!==e.target.dataset.delIndex){
-                                                newArray.push(elem);
-                                            } else {
-                                                itemsRemoved = elem.amount;
-                                            }
-                                            setCartItemObjects(newArray);
-                                            itemsRemoved>0 && setNumOfItems(numOfItems - itemsRemoved);
-                                        });
-                                    }}/>
+                                    <img className="deleteCartItem" data-del-index={indx} src="/images/icon-delete.svg" alt="" onClick={(e)=> handleTheHell(e)}/>
                                 </div>
                             )
                         })
