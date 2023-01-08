@@ -11,19 +11,30 @@ function App() {
   const [isCloaked, setIsCloaked] = useState(true);
   const [focusedThumbnail, setFocusedThumbnail] = useState(1);
   const [focusedThumbnailCloak, setFocusedThumbnailCloak] = useState(1);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [numOfItems, setNumOfItems] = useState(0);
+  const [cartItemObjects, setCartItemObjects] = useState([]);
   useEffect(()=>{
     //wake me up before you go go
     setFocusedThumbnailCloak(focusedThumbnail);
   }, [focusedThumbnail]);
   return (
     <div className="App">
-      <Navbar />
+
+      <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen}
+      numOfItems={numOfItems} setNumOfItems={setNumOfItems}
+      cartItemObjects={cartItemObjects} setCartItemObjects={setCartItemObjects} />
+
       <Main isCloaked={isCloaked} setIsCloaked={setIsCloaked} 
       focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} 
-      setFocusedThumbnailCloak={setFocusedThumbnailCloak} />
+      setFocusedThumbnailCloak={setFocusedThumbnailCloak}
+      cartItemObjects={cartItemObjects} setCartItemObjects={setCartItemObjects} 
+      numOfItems={numOfItems} setNumOfItems={setNumOfItems} />
+
       <CloakedImagesDisplay isCloaked={isCloaked} setIsCloaked={setIsCloaked} 
       focusedThumbnailCloak={focusedThumbnailCloak} setFocusedThumbnailCloak={setFocusedThumbnailCloak} 
       focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} />
+
     </div>
   );
 }

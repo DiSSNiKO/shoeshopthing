@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InfoNDAddToCart = () => {
+const InfoNDAddToCart = (props) => {
     const [amount, setAmount] = useState(0);
     const lowerAmount = () => {
         if (amount > 0) {
@@ -14,6 +14,7 @@ const InfoNDAddToCart = () => {
             return prev += 1;
         })
     }
+    const {numOfItems, setNumOfItems, cartItemObjects, setCartItemObjects} = props;
     return (
         <div className="InfoAndCart">
             <h2 className="sneakerComp">SNEAKER COMPANY</h2>
@@ -50,7 +51,18 @@ const InfoNDAddToCart = () => {
                     <span className="amount">{amount}</span>
                     <img src="/images/icon-plus.svg" id="plus" alt="" onClick={increaseAmount} />
                 </div>
-                <button className="buyButton">
+                <button className="buyButton" onClick={()=>{
+                        if(amount>0){
+                            const objekt = {
+                                amount: amount,
+                                totalPrice: `$${amount*125}.00`,
+                            };
+                            let newcart = cartItemObjects;
+                            newcart.push(objekt);
+                            setCartItemObjects(newcart);
+                            setNumOfItems(numOfItems + amount);
+                        }
+                    }}>
                     <img src="/images/icon-cart-checkout.svg" alt="" />
                     <span>Add to cart</span>
                 </button>
