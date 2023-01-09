@@ -23,6 +23,7 @@ function App() {
       if(!e.target.classList.contains('carted')){
         if(cartOpen){
           setCartOpen(false);
+          document.querySelector(".cartButton").childNodes[0].style.border = '2px solid white';
         }
       }
     }}>

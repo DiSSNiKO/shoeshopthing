@@ -51,7 +51,7 @@ const InfoNDAddToCart = (props) => {
                     <span className="amount">{amount}</span>
                     <img src="/images/icon-plus.svg" id="plus" alt="" onClick={increaseAmount} />
                 </div>
-                <button className="buyButton" onClick={()=>{
+                <button className={`buyButtonGeneric ${amount === 0 ? "noAmountChosen":"buyButton"}`} onClick={()=>{
                         if(amount>0){
                             const objekt = {
                                 amount: amount,
@@ -64,7 +64,7 @@ const InfoNDAddToCart = (props) => {
                         }
                     }}>
                     <img src="/images/icon-cart-checkout.svg" alt="" />
-                    <span>Add to cart</span>
+                    <span>{amount>0 ? "Add to cart":"Choose amount!"}</span>
                 </button>
             </div>
         </div>

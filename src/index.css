@@ -12,7 +12,6 @@
 
 html {
   font-size: 62.5%;
-  height: 100%;
 }
 
 body {
@@ -22,7 +21,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
 }
 .nodisplay {
   display: none;
@@ -186,8 +184,8 @@ header {
 .Main {
   margin: 70px auto 0 auto;
   width: var(--mainWidth);
-  display: flex;
   padding-bottom: 25px;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -366,23 +364,27 @@ header {
   transform: scale(1.15);
 }
 
-.buyButton {
+.buyButtonGeneric {
   display: flex;
   justify-content: center;
   border: none;
-  background-color: hsl(26, 100%, 55%);
   border-radius: 10px;
   width: var(--buyButtonWidth);
   height: 40px;
   transition: 0.25s;
 }
-
+.buyButton {
+  background-color: hsl(26, 100%, 55%);
+}
+.noAmountChosen {
+  background-color: hsl(4, 100%, 55%);
+}
 .buyButton:hover {
   background-color: hsl(40, 100%, 58%);
   cursor: pointer;
 }
 
-.buyButton span {
+.buyButtonGeneric span {
   display: block;
   margin: auto 0;
   margin-left: 20px;
@@ -390,7 +392,7 @@ header {
   color: white;
 }
 
-.buyButton img {
+.buyButtonGeneric img {
   margin: auto 0;
   height: 50%;
   width: auto;
@@ -536,8 +538,21 @@ header {
     --mainWidth: 500px;
     --imagesWidth: 500px;
   }
-  .InfoAndCart {
-    height: 400px;
+  .cart {
+    width: 100%;
+  }
+  .deleteCartItem {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .titleAndPrice div {
+    font-size: 1.5rem;
+  }
+  #uselessCheckoutButton {
+    width: 40%;
+  }
+  .cartContent {
+    width: 100%
   }
   .sneakerComp {
     font-size: 2rem;
@@ -659,5 +674,8 @@ header {
   :root {
     --imagesWidth: 300px;
     --cloakedImagesWidth: 340px;
+  }
+  header {
+    width: 330px;
   }
 }
