@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ThumbnailsContCloak from "./ThumbnailsContCloak";
 const ImagesDisplayForCloak = (props) => {
     const { isCloaked, setIsCloaked, focusedThumbnail, focusedThumbnailCloak, setFocusedThumbnailCloak } = props;
@@ -20,13 +20,9 @@ const ImagesDisplayForCloak = (props) => {
         setFocusedThumbnailCloak(focusedThumbnail);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isCloaked]);
-    const [currentImg, setCurrentImg] = useState(`/images/image-product-${focusedThumbnailCloak}.jpg`);
-    useEffect(() => {
-        setCurrentImg(`/images/image-product-${focusedThumbnailCloak}.jpg`)
-    }, [focusedThumbnailCloak]);
     return (
         <div className="ImagesDisplayCloaked">
-            <img src={currentImg} alt="" className="currentImageDisplayed" />
+            <img src={`/images/image-product-${focusedThumbnailCloak}.jpg`} alt="" className="currentImageDisplayed" />
             <button className="closeCloakDisplay" onClick={()=>{
                 setIsCloaked(true);
             }}>x</button>
