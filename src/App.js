@@ -19,7 +19,13 @@ function App() {
     setFocusedThumbnailCloak(focusedThumbnail);
   }, [focusedThumbnail]);
   return (
-    <div className="App">
+    <div className="App" onClick={(e)=>{
+      if(!e.target.classList.contains('carted')){
+        if(cartOpen){
+          setCartOpen(false);
+        }
+      }
+    }}>
 
       <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen}
       numOfItems={numOfItems} setNumOfItems={setNumOfItems}
@@ -29,7 +35,8 @@ function App() {
       focusedThumbnail={focusedThumbnail} setFocusedThumbnail={setFocusedThumbnail} 
       setFocusedThumbnailCloak={setFocusedThumbnailCloak}
       cartItemObjects={cartItemObjects} setCartItemObjects={setCartItemObjects} 
-      numOfItems={numOfItems} setNumOfItems={setNumOfItems} />
+      numOfItems={numOfItems} setNumOfItems={setNumOfItems} 
+      />
 
       <CloakedImagesDisplay isCloaked={isCloaked} setIsCloaked={setIsCloaked} 
       focusedThumbnailCloak={focusedThumbnailCloak} setFocusedThumbnailCloak={setFocusedThumbnailCloak} 

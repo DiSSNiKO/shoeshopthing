@@ -15,20 +15,20 @@ const Navbar = (props) => {
     }
     return (
         <header className="navbar">
-            <div className={`cart ${props.cartOpen ? "":"hideCart"}`}>
-                <h3 className={`${props.cartOpen ? "":"hideCartContent"}`}>Cart</h3>
-                <div className={`cartContent ${props.cartOpen ? "":"hideCartContent"}`}>
-                    {props.numOfItems === 0 && <div className="emptyCartAlert">Your cart is empty.</div>}
+            <div className={`cart carted ${props.cartOpen ? "":"hideCart"}`}>
+                <h3 className={`carted ${props.cartOpen ? "":"hideCartContent"}`}>Cart</h3>
+                <div className={`cartContent carted ${props.cartOpen ? "":"hideCartContent"}`}>
+                    {props.numOfItems === 0 && <div className="carted emptyCartAlert">Your cart is empty.</div>}
                     {
                         props.numOfItems>0 ? cartItemObjects.map((objekt, indx)=>{
                             return (
-                                <div key={indx} className="cartItem">
-                                    <img className="cartItemImage" src="/images/image-product-1-thumbnail.jpg" alt="" />
-                                    <div className="titleAndPrice">
-                                        <div>Fall Limited Edition Sneakers</div>
-                                        <div>$125.00 x {objekt.amount} <strong>{objekt.totalPrice}</strong></div>
+                                <div key={indx} className="cartItem carted">
+                                    <img className="carted cartItemImage" src="/images/image-product-1-thumbnail.jpg" alt="" />
+                                    <div className="titleAndPrice carted">
+                                        <div className="carted">Fall Limited Edition Sneakers</div>
+                                        <div className="carted">$125.00 x {objekt.amount} <strong>{objekt.totalPrice}</strong></div>
                                     </div>
-                                    <img className="deleteCartItem" data-del-index={indx} src="/images/icon-delete.svg" alt="" onClick={(e)=> handleTheHell(e)}/>
+                                    <img className="deleteCartItem carted" data-del-index={indx} src="/images/icon-delete.svg" alt="" onClick={(e)=> handleTheHell(e)}/>
                                 </div>
                             )
                         })
